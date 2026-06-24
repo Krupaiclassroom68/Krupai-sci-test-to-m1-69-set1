@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>SCIENCE QUEST Entrance M.1 Set 2 | Kru Pai Classroom</title>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#1b1238;--bg2:#123f5a;--bg3:#164a3a;--ink:#102033;--cyan:#55e7ff;--mint:#55f2a6;--gold:#ffd85a;--pink:#ff74bd;--red:#ff5d7a;--line:#d8f3ff;--shadow:0 22px 60px rgba(0,0,0,.28)}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:'Prompt',sans-serif;color:var(--ink);background:linear-gradient(135deg,var(--bg1),var(--bg2) 55%,var(--bg3));overflow-x:hidden}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;background:radial-gradient(circle at 12% 10%,rgba(85,231,255,.20),transparent 25%),radial-gradient(circle at 88% 18%,rgba(255,216,90,.18),transparent 23%),radial-gradient(circle at 52% 90%,rgba(85,242,166,.18),transparent 30%)}body:after{content:"🧬 🔭 ⚗️ 🌱 🫀 🧲 🔬 🌍 💡";position:fixed;left:-8%;top:8%;font-size:46px;letter-spacing:28px;opacity:.075;transform:rotate(-11deg);white-space:nowrap;pointer-events:none;z-index:-1}.screen{display:none;min-height:100dvh;width:100%;padding:clamp(10px,2vw,20px)}.screen.active{display:flex;flex-direction:column}.center{align-items:center;justify-content:center;text-align:center}.panel{background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(238,252,255,.92));border:4px solid rgba(184,244,255,.95);border-radius:30px;box-shadow:var(--shadow), inset 0 0 0 2px rgba(255,255,255,.75);padding:clamp(14px,2.2vw,26px)}.badgeTop{display:inline-flex;gap:9px;align-items:center;background:linear-gradient(135deg,#071a2f,#0f4a75);color:#fff;border:3px solid var(--gold);border-radius:999px;padding:8px 16px;font-weight:900;box-shadow:0 8px 0 rgba(0,0,0,.25)}.title{font-size:clamp(38px,7vw,82px);font-weight:900;line-height:.95;margin:14px 0;background:linear-gradient(90deg,#fff,#55e7ff,#55f2a6,#ffd85a);-webkit-background-clip:text;color:transparent;text-shadow:0 6px 22px rgba(0,0,0,.22)}.panel .title{text-shadow:none;background:linear-gradient(90deg,#0f4a75,#0f766e,#f59e0b);-webkit-background-clip:text;color:transparent}.subtitle{font-size:clamp(16px,2.1vw,23px);line-height:1.55;color:#385269;max-width:1050px;margin:12px auto}.namebox{width:min(560px,92vw);font-family:inherit;font-size:21px;text-align:center;padding:14px 18px;border:3px solid #a5f3fc;border-radius:20px;background:#fff;color:#102033;margin:14px auto;outline:none}.namebox:focus{box-shadow:0 0 0 5px rgba(85,231,255,.25)}.btn{font-family:inherit;border:none;border-radius:999px;padding:12px 22px;font-size:clamp(16px,2vw,22px);font-weight:900;cursor:pointer;color:#102033;background:linear-gradient(135deg,#fff,var(--gold));box-shadow:0 8px 0 rgba(118,79,0,.32);transition:.12s}.btn:active{transform:translateY(5px);box-shadow:0 3px 0 rgba(118,79,0,.32)}.btn.secondary{background:linear-gradient(135deg,#fff,#8df3ff);box-shadow:0 8px 0 rgba(0,101,135,.24)}.btn.green{background:linear-gradient(135deg,#fff,#91f7bc);box-shadow:0 8px 0 rgba(19,112,52,.24)}.row{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap}.topbar{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:8px;flex-wrap:wrap}.logo{font-weight:900;color:#eaffff;text-shadow:0 2px 0 rgba(0,0,0,.2);font-size:clamp(17px,2vw,24px)}.statline{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.pill,.tag{border:2px solid #bdefff;background:#fff;border-radius:999px;padding:7px 11px;font-weight:900;font-size:clamp(13px,1.5vw,17px);white-space:nowrap;color:#102033}.layout{flex:1;display:grid;grid-template-columns:minmax(260px,.55fr) minmax(360px,1fr);gap:12px;min-height:0}.leftCard,.mainCard,.rightCard{display:flex;flex-direction:column;gap:10px;min-height:0}.mapGrid{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}.qnum{height:42px;border:3px solid #d8f3ff;border-radius:14px;background:#fff;font-weight:900;font-size:18px;display:grid;place-items:center;position:relative;color:#334155;box-shadow:0 5px 0 rgba(0,80,120,.08)}.qnum.current{border-color:var(--gold);box-shadow:0 0 0 5px rgba(255,216,90,.18),0 5px 0 rgba(0,80,120,.08)}.qnum.ok{background:linear-gradient(135deg,#ecfdf5,#bbf7d0);border-color:#22c55e}.qnum.bad{background:linear-gradient(135deg,#fff1f2,#fecdd3);border-color:#fb7185}.qnum.ok:after,.qnum.bad:after{position:absolute;inset:0;display:grid;place-items:center;font-size:31px;font-weight:900;text-shadow:0 2px 0 #fff}.qnum.ok:after{content:"✓";color:#16a34a}.qnum.bad:after{content:"✕";color:#e11d48}.legend{display:flex;gap:7px;flex-wrap:wrap;font-weight:800;color:#475569}.categoryBox{display:grid;gap:8px;overflow:auto;max-height:35vh}.catRow{display:grid;grid-template-columns:1fr auto;gap:8px;align-items:center;background:#fff;border:2px solid #e0f2fe;border-radius:16px;padding:9px;font-weight:800}.bar{height:10px;background:#e2e8f0;border-radius:999px;overflow:hidden;grid-column:1/-1}.bar span{display:block;height:100%;width:0%;background:linear-gradient(90deg,#55e7ff,#55f2a6);border-radius:999px;transition:.35s}.questionCard{position:relative;background:linear-gradient(135deg,#fff,#effcff);border:4px solid var(--gold);border-radius:28px;padding:16px;box-shadow:0 12px 0 rgba(255,216,90,.24),0 18px 26px rgba(0,0,0,.10)}.qmeta{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:8px}.question{font-size:clamp(22px,3.4vw,38px);font-weight:900;line-height:1.38;text-align:center}.stem{font-size:clamp(15px,1.8vw,20px);line-height:1.55;margin-top:10px;text-align:left;background:#f8fafc;border:2px dashed #bae6fd;border-radius:18px;padding:10px;font-weight:700;color:#334155}.choiceGrid{display:grid;grid-template-columns:1fr;gap:10px}.choice{border:3px solid #fff;border-radius:22px;background:linear-gradient(135deg,#fff,#e8fbff);font-family:inherit;font-size:clamp(17px,2vw,24px);font-weight:900;text-align:left;padding:13px;cursor:pointer;color:#102033;box-shadow:0 8px 0 rgba(0,80,120,.16);display:flex;gap:10px;align-items:flex-start;transition:.12s}.choice:hover{transform:translateY(-3px);filter:brightness(1.03)}.choice:disabled{cursor:not-allowed}.choice.correct{background:linear-gradient(135deg,#fff,#bbf7d0)!important;border-color:#22c55e}.choice.wrong{background:linear-gradient(135deg,#fff,#fecdd3)!important;border-color:#fb7185}.badge{flex:0 0 46px;width:46px;height:46px;min-width:46px;min-height:46px;border-radius:15px;display:grid!important;place-items:center;background:linear-gradient(135deg,#0ea5e9,#10b981);color:#fff!important;font-weight:900;font-size:24px;line-height:1;box-shadow:inset 0 -4px 0 rgba(0,0,0,.16);visibility:visible!important;opacity:1!important}.choice span:not(.badge){display:block;flex:1}.statusBox{min-height:70px;background:#fff;border:2px dashed #bae6fd;border-radius:20px;padding:10px;font-weight:800;color:#475569;line-height:1.45}.history{flex:1;min-height:0;overflow:auto;display:flex;flex-direction:column;gap:8px}.hist{background:#fff;border:2px solid #dbeafe;border-radius:16px;padding:9px;font-weight:800}.hist.ok{background:#ecfdf5;border-color:#86efac}.hist.bad{background:#fff1f2;border-color:#fda4af}.feedback{position:fixed;left:50%;top:42%;transform:translate(-50%,-50%);z-index:50;min-width:min(680px,90vw);padding:20px 24px;border-radius:30px;text-align:center;font-weight:900;font-size:clamp(30px,5vw,62px);pointer-events:none;opacity:0}.feedback.show{animation:fb 1.05s ease}.feedback.good{background:#fff;color:#166534;box-shadow:0 0 70px rgba(85,242,166,.9)}.feedback.bad{background:#fff;color:#be123c;box-shadow:0 0 70px rgba(255,93,122,.8)}@keyframes fb{0%{opacity:0;transform:translate(-50%,-50%) scale(.55)}18%{opacity:1;transform:translate(-50%,-50%) scale(1.08)}78%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) scale(.95)}}.modal{position:fixed;inset:0;background:rgba(7,18,35,.62);z-index:70;display:none;align-items:center;justify-content:center;padding:10px}.modal.show{display:flex}.modalCard{background:#fff;border-radius:28px;width:min(940px,96vw);max-height:92dvh;display:flex;flex-direction:column;border:4px solid #a5f3fc;box-shadow:0 26px 75px rgba(0,0,0,.35);overflow:hidden}.modalHead{padding:14px 18px;background:linear-gradient(135deg,#071a2f,#0f4a75 55%,#0f766e);color:#fff;text-align:center}.modalHead h2{margin:0;font-size:clamp(26px,4vw,46px);line-height:1.05}.modalBody{padding:12px 16px;overflow:auto;line-height:1.5}.explainGrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.explainLine{background:#f8fbff;border:2px solid #dbeafe;border-radius:17px;padding:10px;font-weight:750}.explainLine.full{grid-column:1/-1}.explainLine.good{background:#ecfdf5;border-color:#86efac}.explainLine.bad{background:#fff1f2;border-color:#fda4af}.explainLine.warn{background:#fffbeb;border-color:#fde68a}.explainLine b{color:#0f4a75}.modalFoot{padding:11px;background:#fff;border-top:2px solid #e0f2fe;display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.scoreBig{font-size:clamp(54px,10vw,104px);font-weight:900;color:#0ea5e9;margin:8px 0;line-height:.95}.summaryGrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left}.summaryCard{background:#fff;border:2px solid #dbeafe;border-radius:22px;padding:12px;box-shadow:0 10px 24px rgba(0,70,120,.08)}.summaryCard h3{margin:0 0 8px;color:#0f4a75;font-size:24px}.reviewBox{max-height:46vh;overflow:auto;display:grid;gap:8px;text-align:left}.reviewItem{background:#fff;border:2px solid #dbeafe;border-radius:16px;padding:10px;font-weight:750}.reviewItem.ok{background:#ecfdf5;border-color:#86efac}.reviewItem.bad{background:#fff1f2;border-color:#fda4af}.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:40}.piece{position:absolute;width:9px;height:16px;top:-20px;animation:fall 1.8s linear forwards}@keyframes fall{to{transform:translateY(110vh) rotate(560deg);opacity:.25}}
+@media(max-width:1050px){.layout{grid-template-columns:1fr}.categoryBox{max-height:none}.leftCard,.rightCard{min-height:auto}.mapGrid{grid-template-columns:repeat(10,1fr)}.qnum{height:36px;font-size:15px}.question{font-size:28px}.summaryGrid{grid-template-columns:1fr}}@media(max-width:600px){.screen{padding:8px}.panel{border-radius:22px;padding:11px}.title{font-size:42px}.mapGrid{grid-template-columns:repeat(8,1fr);gap:6px}.qnum{height:33px;border-radius:11px}.choice{font-size:18px;padding:11px}.badge{width:37px;height:37px}.explainGrid{grid-template-columns:1fr}.modal{align-items:stretch}.modalCard{max-height:96dvh}.topbar{align-items:flex-start}.statline{justify-content:flex-start}}@media print{body{background:#fff;color:#000}body:before,body:after,.confetti,#start,#game,#explainModal,.btn,.feedback{display:none!important}#final{display:block!important;min-height:auto;padding:0}.panel{box-shadow:none;border:1px solid #999;border-radius:0}.reviewBox{max-height:none;overflow:visible}.summaryGrid{grid-template-columns:1fr 1fr}.reviewItem,.summaryCard{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="confetti" id="confetti"></div><div id="feedback" class="feedback"></div>
+<section id="start" class="screen active center"><div class="panel" style="width:min(1120px,95vw)"><div class="badgeTop">🔬 Kru Pai Classroom · SCIENCE QUEST</div><h1 class="title">Entrance M.1 Science Battle Set 2</h1><p class="subtitle">เกมข้อสอบวิทย์สอบเข้า ม.1 <b>ชุดที่ 2</b> ยากกว่าเดิม ซับซ้อนขึ้น 40 ข้อ ครอบคลุมหลายหมวด<br><b>ตอบแล้วล็อกคำตอบทันที แก้ไม่ได้</b> เฉลยวิเคราะห์ทุกข้อ และกระจายคำตอบ A/B/C/D อย่างสมดุล ✅❌</p><input id="playerName" class="namebox" placeholder="พิมพ์ชื่อเล่นก่อนเริ่ม"><div class="row"><button class="btn" onclick="startGame()">🚀 เริ่มชุดที่ 2 แบบยาก 40 ข้อ</button><button class="btn secondary" onclick="showHow()">📖 ดูกติกาสั้น ๆ</button></div></div></section>
+<section id="game" class="screen"><div class="topbar"><div class="logo">🔬 SCIENCE QUEST | Entrance M.1 Set 2</div><div class="statline"><div class="pill" id="gName">👧 ผู้เล่น</div><div class="pill" id="gProgress">ข้อ 1/40</div><div class="pill" id="gScore">⭐ 0</div><div class="pill" id="gPercent">0%</div></div></div><div class="layout"><div class="leftCard panel"><div class="badgeTop" style="justify-content:center">📍 แผงประวัติข้อ</div><div class="mapGrid" id="qMap"></div><div class="legend"><span>🟡 ข้อปัจจุบัน</span><span>✅ ถูก</span><span>❌ ผิด</span></div><div class="categoryBox" id="categoryBox"></div></div><div class="mainCard"><div class="questionCard"><div class="qmeta"><span class="tag" id="qNo">ข้อ 1</span><span class="tag" id="qCat">หมวด</span><span class="tag" id="qLevel">ระดับยาก</span></div><div class="question" id="questionText"></div><div class="stem" id="stemText"></div></div><div class="choiceGrid" id="choiceGrid"></div></div></div></div></section>
+<section id="final" class="screen center"><div class="panel" style="width:min(1120px,96vw)"><div class="badgeTop">🏆 SCIENCE QUEST REPORT</div><div class="scoreBig" id="finalScore">0%</div><div class="subtitle" id="finalSummary"></div><div class="summaryGrid"><div class="summaryCard"><h3>📊 วิเคราะห์ตามหมวด</h3><div id="finalCategory"></div></div><div class="summaryCard"><h3>🎯 คำแนะนำครู</h3><div id="teacherAdvice"></div></div></div><div class="summaryCard" style="margin-top:12px"><h3>📋 รายงานคำตอบครบ 40 ข้อ</h3><div class="reviewBox" id="finalReview"></div></div><div class="row" style="margin-top:12px"><button class="btn green" onclick="window.print()">🖨️ พิมพ์ / บันทึกเป็น PDF</button><button class="btn" onclick="startGame()">เล่นใหม่</button><button class="btn secondary" onclick="go('start')">กลับหน้าแรก</button></div></div></section>
+<div id="explainModal" class="modal"><div class="modalCard"><div class="modalHead"><h2 id="modalTitle">เฉลย</h2></div><div class="modalBody" id="modalBody"></div><div class="modalFoot"><button class="btn" onclick="nextQuestion()">ข้อต่อไป ➡️</button></div></div></div>
+<script>
+const QUESTIONS = [
+  {
+    "cat": "ฟิสิกส์",
+    "level": "ยากมาก",
+    "q": "รถ A วิ่ง 30 เมตรใน 5 วินาที รถ B วิ่ง 42 เมตรใน 7 วินาที ข้อใดถูกต้อง",
+    "stem": "ต้องคำนวณอัตราเร็วเฉลี่ยก่อนเปรียบเทียบ ไม่ดูแค่ระยะทาง",
+    "choices": [
+      "รถทั้งสองมีอัตราเร็วเฉลี่ยเท่ากัน",
+      "รถ A เร็วกว่ารถ B",
+      "รถ B เร็วกว่ารถ A",
+      "สรุปไม่ได้เพราะเวลาไม่เท่ากัน"
+    ],
+    "ans": 0,
+    "explain": "รถ A = 30÷5 = 6 m/s และรถ B = 42÷7 = 6 m/s จึงเร็วเฉลี่ยเท่ากัน",
+    "tip": "เทียบการเคลื่อนที่ต้องใช้ระยะทาง ÷ เวลา"
+  },
+  {
+    "cat": "ฟิสิกส์",
+    "level": "ซับซ้อน",
+    "q": "ออกแรงดึงกล่อง 18 N ไปทางขวา แรงเสียดทาน 18 N ไปทางซ้าย กล่องจะเป็นอย่างไร",
+    "stem": "ดูแรงลัพธ์ ไม่ใช่ดูว่ามีแรงกระทำหรือไม่",
+    "choices": [
+      "เคลื่อนที่เร็วขึ้นทางขวา",
+      "แรงลัพธ์เป็นศูนย์ จึงไม่เร่ง",
+      "เคลื่อนที่เร็วขึ้นทางซ้าย",
+      "ลอยขึ้นจากพื้น"
+    ],
+    "ans": 1,
+    "explain": "แรงสองแรงเท่ากันแต่ทิศตรงข้าม แรงลัพธ์เป็นศูนย์ วัตถุจึงไม่เร่ง อาจอยู่นิ่งหรือเคลื่อนที่ด้วยความเร็วคงที่",
+    "tip": "แรงลัพธ์ศูนย์ = ไม่เร่ง"
+  },
+  {
+    "cat": "ฟิสิกส์",
+    "level": "วิเคราะห์",
+    "q": "ช้อนโลหะร้อนเร็วกว่าช้อนไม้เมื่อแช่น้ำร้อน เพราะเหตุใด",
+    "stem": "ทั้งสองรับความร้อนจากน้ำเหมือนกัน แต่สมบัติวัสดุต่างกัน",
+    "choices": [
+      "ไม้สร้างความเย็นได้",
+      "โลหะมีสีเข้มกว่า",
+      "โลหะนำความร้อนได้ดีกว่าไม้",
+      "น้ำร้อนเลือกถ่ายเทให้โลหะเท่านั้น"
+    ],
+    "ans": 2,
+    "explain": "โลหะเป็นตัวนำความร้อนดี ความร้อนจึงถ่ายผ่านเนื้อโลหะได้เร็วกว่าช้อนไม้ซึ่งเป็นฉนวนมากกว่า",
+    "tip": "โลหะ = ตัวนำความร้อนดี"
+  },
+  {
+    "cat": "ฟิสิกส์",
+    "level": "ยากมาก",
+    "q": "หลอดไฟ 3 ดวงต่อแบบขนาน ถ้าหลอดหนึ่งขาด ผลใดถูกต้องที่สุด",
+    "stem": "วงจรขนานมีทางเดินกระแสหลายแขน",
+    "choices": [
+      "หลอดอื่นดับทั้งหมด",
+      "กระแสไฟฟ้าหยุดทั้งวงจร",
+      "หลอดที่ขาดจะสว่างขึ้น",
+      "หลอดอื่นยังสว่างได้ เพราะยังมีวงจรของตนเอง"
+    ],
+    "ans": 3,
+    "explain": "ในวงจรขนาน แต่ละแขนมีเส้นทางกระแสของตนเอง หลอดหนึ่งขาด หลอดอื่นยังครบวงจรจึงยังสว่างได้",
+    "tip": "ขนาน = มีทางสำรอง"
+  },
+  {
+    "cat": "ฟิสิกส์",
+    "level": "ซับซ้อน",
+    "q": "ลูกบอลถูกโยนขึ้น หลังหลุดจากมือแล้ว แรงหลักที่กระทำต่อลูกบอลคือข้อใด",
+    "stem": "อย่าสับสนกับแรงมือ เพราะมือไม่ได้สัมผัสแล้ว",
+    "choices": [
+      "แรงโน้มถ่วงของโลกดึงลง",
+      "แรงมือดันขึ้นตลอดเวลา",
+      "แรงเสียดทานดันขึ้น",
+      "ไม่มีแรงใดกระทำเลย"
+    ],
+    "ans": 0,
+    "explain": "หลังลูกบอลหลุดมือ แรงมือหมดไป แรงหลักคือแรงโน้มถ่วงดึงลง ทำให้ลูกบอลช้าลงขณะลอยขึ้น",
+    "tip": "หลังปล่อยมือ แรงมือไม่อยู่แล้ว"
+  },
+  {
+    "cat": "ฟิสิกส์",
+    "level": "วิเคราะห์",
+    "q": "ต้องการลดแรงเสียดทานในเครื่องจักร ควรทำอย่างไร",
+    "stem": "แยกกรณีเพิ่มแรงเสียดทานกับลดแรงเสียดทาน",
+    "choices": [
+      "ทำผิวให้หยาบขึ้น",
+      "ใส่น้ำมันหล่อลื่น",
+      "เพิ่มน้ำหนักกดทับ",
+      "ใช้ยางขรุขระ"
+    ],
+    "ans": 1,
+    "explain": "น้ำมันหล่อลื่นลดการสัมผัสโดยตรงระหว่างผิววัตถุ ทำให้แรงเสียดทานลดลง",
+    "tip": "หล่อลื่น = ลดเสียดทาน"
+  },
+  {
+    "cat": "ฟิสิกส์",
+    "level": "ยากมาก",
+    "q": "วัตถุมวลมากกับมวลน้อยได้รับแรงเท่ากัน วัตถุใดเปลี่ยนความเร็วได้ยากกว่า",
+    "stem": "เชื่อมโยงมวลกับความเฉื่อย",
+    "choices": [
+      "วัตถุมวลน้อย",
+      "เปลี่ยนเท่ากันเสมอ",
+      "วัตถุมวลมาก",
+      "ขึ้นอยู่กับสีของวัตถุ"
+    ],
+    "ans": 2,
+    "explain": "วัตถุมวลมากมีความเฉื่อยมาก จึงเปลี่ยนสภาพการเคลื่อนที่ได้ยากกว่าเมื่อได้รับแรงเท่ากัน",
+    "tip": "มวลมาก = เฉื่อยมาก"
+  },
+  {
+    "cat": "ฟิสิกส์",
+    "level": "วิเคราะห์",
+    "q": "เงามืดคมชัดที่สุดมักเกิดเมื่อใด",
+    "stem": "พิจารณาแหล่งกำเนิดแสง วัตถุ และฉาก",
+    "choices": [
+      "แสงผ่านแก้วใส",
+      "ไม่มีฉากรับเงา",
+      "แสงกระจายจากหลายทิศ",
+      "วัตถุทึบแสงบังแหล่งกำเนิดแสงขนาดเล็ก"
+    ],
+    "ans": 3,
+    "explain": "เงาคมชัดเกิดจากวัตถุทึบแสงบังแสงจากแหล่งกำเนิดขนาดเล็ก ทำให้ขอบเงาไม่ฟุ้งมาก",
+    "tip": "แหล่งแสงเล็ก + วัตถุทึบแสง = เงาชัด"
+  },
+  {
+    "cat": "เคมี",
+    "level": "ซับซ้อน",
+    "q": "สารผสม ผงเหล็ก + ทราย + เกลือ ควรแยกอย่างไรเหมาะสมที่สุด",
+    "stem": "ต้องใช้สมบัติแม่เหล็ก การละลายน้ำ การกรอง และการระเหย",
+    "choices": [
+      "ใช้แม่เหล็กแยกเหล็ก → เติมน้ำละลายเกลือ → กรองทราย → ระเหยน้ำเอาเกลือ",
+      "กรองทันทีแล้วจบ",
+      "ระเหยก่อนทุกขั้นตอน",
+      "ร่อนอย่างเดียวก็พอ"
+    ],
+    "ans": 0,
+    "explain": "เหล็กถูกแม่เหล็กดูด แยกก่อน จากนั้นเกลือละลายน้ำได้ ทรายไม่ละลายจึงกรองออก แล้วระเหยน้ำเพื่อได้เกลือ",
+    "tip": "โจทย์หลายสาร ต้องเรียงวิธีแยกตามสมบัติ"
+  },
+  {
+    "cat": "เคมี",
+    "level": "ยากมาก",
+    "q": "สารละลาย A pH 3 ผสมกับสารละลาย B pH 10 ข้อใดสรุปได้เหมาะสมที่สุด",
+    "stem": "ไม่มีข้อมูลปริมาณและความเข้มข้น จึงสรุปค่า pH สุดท้ายแน่นอนไม่ได้",
+    "choices": [
+      "ต้องเป็น pH 7 เสมอ",
+      "pH มีแนวโน้มเข้าใกล้กลางขึ้น แต่บอกค่าแน่นอนไม่ได้",
+      "A เป็นเบส B เป็นกรด",
+      "ไม่มีทางเกิดการเปลี่ยนแปลง"
+    ],
+    "ans": 1,
+    "explain": "A เป็นกรด B เป็นเบส เมื่อผสมกันอาจทำให้เป็นกลางบางส่วน แต่ค่า pH สุดท้ายขึ้นกับปริมาณและความเข้มข้น",
+    "tip": "อย่าด่วนตอบ pH 7 ถ้าโจทย์ไม่บอกปริมาณ"
+  },
+  {
+    "cat": "เคมี",
+    "level": "วิเคราะห์",
+    "q": "ข้อใดเป็นหลักฐานชัดว่ามีปฏิกิริยาเคมีเกิดขึ้น",
+    "stem": "มองหาสารใหม่ ไม่ใช่แค่เปลี่ยนรูปร่างหรือสถานะ",
+    "choices": [
+      "ตัดกระดาษเป็นชิ้นเล็ก",
+      "น้ำแข็งละลาย",
+      "เกิดแก๊สและตะกอนหลังผสมสาร",
+      "บดน้ำตาลให้ละเอียด"
+    ],
+    "ans": 2,
+    "explain": "การเกิดแก๊สและตะกอนใหม่หลังผสมสารเป็นหลักฐานของการเกิดสารใหม่ จึงเป็นการเปลี่ยนแปลงทางเคมี",
+    "tip": "สารใหม่ = เคมี"
+  },
+  {
+    "cat": "เคมี",
+    "level": "ยากกว่าเดิม",
+    "q": "คอลลอยด์ต่างจากสารแขวนลอยอย่างไร",
+    "stem": "ดูขนาดอนุภาค การตกตะกอน และการกระเจิงแสง",
+    "choices": [
+      "คอลลอยด์ตกตะกอนเร็วกว่าเสมอ",
+      "สารแขวนลอยเป็นธาตุบริสุทธิ์",
+      "คอลลอยด์กรองได้ง่ายกว่าสารแขวนลอยทุกชนิด",
+      "คอลลอยด์อนุภาคเล็กกว่าแขวนลอย ไม่ตกตะกอนง่าย และกระเจิงแสงได้"
+    ],
+    "ans": 3,
+    "explain": "คอลลอยด์มีอนุภาคขนาดกลาง ไม่ตกตะกอนง่ายและกระเจิงแสงได้ ส่วนสารแขวนลอยมีอนุภาคใหญ่กว่าและมักตกตะกอนได้",
+    "tip": "คอลลอยด์ = ทินดอลล์"
+  },
+  {
+    "cat": "เคมี",
+    "level": "วิเคราะห์",
+    "q": "น้ำตาลผงละลายเร็วกว่าน้ำตาลก้อนในน้ำอุณหภูมิเดียวกัน เพราะเหตุใด",
+    "stem": "ปัจจัยสำคัญคือพื้นที่ผิวสัมผัสกับน้ำ",
+    "choices": [
+      "น้ำตาลผงมีพื้นที่ผิวสัมผัสมากกว่า",
+      "น้ำตาลผงเป็นสารคนละชนิด",
+      "น้ำตาลก้อนมีค่า pH สูงกว่า",
+      "น้ำตาลผงมีแม่เหล็กดูดน้ำ"
+    ],
+    "ans": 0,
+    "explain": "น้ำตาลผงมีชิ้นเล็กกว่า ทำให้พื้นที่ผิวรวมสัมผัสน้ำมากกว่า จึงละลายเร็วกว่า",
+    "tip": "ชิ้นเล็ก = พื้นที่ผิวมาก"
+  },
+  {
+    "cat": "เคมี",
+    "level": "ยากมาก",
+    "q": "สารละลายเกลือถูกให้ความร้อนจนน้ำระเหยหมด สิ่งที่เหลือคืออะไร",
+    "stem": "ตัวทำละลายระเหยไป แต่ตัวถูกละลายยังเหลือ",
+    "choices": [
+      "ไอน้ำเท่านั้น",
+      "ผลึกเกลือ",
+      "แก๊สออกซิเจน",
+      "ไม่มีอะไรเหลือเลย"
+    ],
+    "ans": 1,
+    "explain": "น้ำระเหยออกไป เกลือซึ่งเป็นตัวถูกละลายและไม่ระเหยง่ายจะตกผลึกเหลืออยู่",
+    "tip": "ระเหยแห้งใช้แยกของแข็งที่ละลายอยู่"
+  },
+  {
+    "cat": "เคมี",
+    "level": "วิเคราะห์",
+    "q": "การแยกน้ำกับแอลกอฮอล์ควรใช้หลักการใดมากที่สุด",
+    "stem": "ของเหลวสองชนิดผสมกันและมีจุดเดือดต่างกัน",
+    "choices": [
+      "การใช้แม่เหล็ก",
+      "การร่อน",
+      "การกลั่น",
+      "การหยิบออกด้วยมือ"
+    ],
+    "ans": 2,
+    "explain": "น้ำและแอลกอฮอล์เป็นของเหลวที่ผสมกันได้ แต่จุดเดือดต่างกัน จึงใช้การกลั่นเพื่อแยกได้",
+    "tip": "ของเหลวผสม จุดเดือดต่าง → กลั่น"
+  },
+  {
+    "cat": "เคมี",
+    "level": "วิเคราะห์ซับซ้อน",
+    "q": "สาร X ทำให้กระดาษลิตมัสแดงเปลี่ยนเป็นน้ำเงิน สาร X มีสมบัติอย่างไร",
+    "stem": "ลิตมัสแดงเปลี่ยนเป็นน้ำเงินเป็นสมบัติของเบส",
+    "choices": [
+      "เป็นกรด",
+      "เป็นกลางแน่นอน",
+      "เป็นน้ำบริสุทธิ์",
+      "เป็นเบส"
+    ],
+    "ans": 3,
+    "explain": "สารเบสเปลี่ยนกระดาษลิตมัสแดงให้เป็นน้ำเงิน ส่วนกรดเปลี่ยนลิตมัสน้ำเงินเป็นแดง",
+    "tip": "แดง→น้ำเงิน = เบส"
+  },
+  {
+    "cat": "ชีววิทยา",
+    "level": "ยากมาก",
+    "q": "ถ้าปิดปากใบของพืชนาน ๆ ผลใดเกิดขึ้นโดยตรงมากที่สุด",
+    "stem": "ปากใบเกี่ยวข้องกับการแลกเปลี่ยนแก๊สและการคายน้ำ",
+    "choices": [
+      "การแลกเปลี่ยนแก๊สลดลง กระทบการสังเคราะห์ด้วยแสง",
+      "รากดูดน้ำเพิ่มขึ้นทันที",
+      "คลอโรฟิลล์เปลี่ยนเป็นแป้งทั้งหมด",
+      "พืชหยุดหายใจโดยสิ้นเชิง"
+    ],
+    "ans": 0,
+    "explain": "ปากใบช่วยแลกเปลี่ยนแก๊ส เช่น CO₂ สำหรับสังเคราะห์ด้วยแสง หากปิดนาน CO₂ เข้าใบน้อยลงจึงกระทบการสร้างอาหาร",
+    "tip": "ปากใบ = แก๊สเข้าออก + คายน้ำ"
+  },
+  {
+    "cat": "ชีววิทยา",
+    "level": "วิเคราะห์ซับซ้อน",
+    "q": "เม็ดเลือดแดงอยู่ในสารละลายนอกเซลล์ที่เจือจางกว่าภายในเซลล์ น้ำจะเคลื่อนที่อย่างไร",
+    "stem": "น้ำเคลื่อนจากสารละลายเจือจางไปเข้มข้นผ่านเยื่อเลือกผ่าน",
+    "choices": [
+      "น้ำออกจากเซลล์จนเหี่ยว",
+      "น้ำเข้าสู่เซลล์ ทำให้บวมและอาจแตก",
+      "ไม่มีการเคลื่อนที่ของน้ำ",
+      "เกลือออกจากเซลล์เท่านั้น"
+    ],
+    "ans": 1,
+    "explain": "นอกเซลล์เจือจางกว่า ภายในเซลล์เข้มข้นกว่า น้ำจึงออสโมซิสเข้าสู่เซลล์ ทำให้เม็ดเลือดแดงบวมและอาจแตก",
+    "tip": "นอกเจือจาง → น้ำเข้าเซลล์"
+  },
+  {
+    "cat": "ชีววิทยา",
+    "level": "วิเคราะห์",
+    "q": "เอนไซม์ในน้ำลายเริ่มย่อยสารอาหารประเภทใด",
+    "stem": "น้ำลายมีอะไมเลสซึ่งเกี่ยวข้องกับแป้ง",
+    "choices": [
+      "โปรตีน",
+      "ไขมัน",
+      "แป้ง",
+      "วิตามิน"
+    ],
+    "ans": 2,
+    "explain": "น้ำลายมีเอนไซม์อะไมเลส ช่วยเริ่มย่อยแป้งให้เป็นน้ำตาลขนาดเล็กลง",
+    "tip": "ปากเริ่มย่อยแป้ง"
+  },
+  {
+    "cat": "ชีววิทยา",
+    "level": "ยากมาก",
+    "q": "ถ้าวิลลัสในลำไส้เล็กลดลงมาก ผลที่น่าจะเกิดคือข้อใด",
+    "stem": "วิลลัสเพิ่มพื้นที่ผิวในการดูดซึมสารอาหาร",
+    "choices": [
+      "กระเพาะอาหารย่อยโปรตีนดีขึ้น",
+      "สร้างน้ำดีเพิ่มขึ้น",
+      "หัวใจเต้นช้าลง",
+      "การดูดซึมสารอาหารลดลง"
+    ],
+    "ans": 3,
+    "explain": "วิลลัสเพิ่มพื้นที่ผิวของลำไส้เล็กเพื่อดูดซึมสารอาหาร หากลดลง พื้นที่ดูดซึมลดลงตามไปด้วย",
+    "tip": "วิลลัส = เพิ่มพื้นที่ดูดซึม"
+  },
+  {
+    "cat": "ชีววิทยา",
+    "level": "ยากกว่าเดิม",
+    "q": "ในโซ่อาหาร หญ้า → ตั๊กแตน → กบ → งู ถ้ากบลดลงมาก ผลใดน่าจะเกิดช่วงแรก",
+    "stem": "กบกินตั๊กแตนและเป็นอาหารของงู",
+    "choices": [
+      "ตั๊กแตนอาจเพิ่มขึ้น และงูอาจมีอาหารลดลง",
+      "หญ้าเพิ่มขึ้นทันทีแน่นอน",
+      "งูเพิ่มขึ้นทันที",
+      "ไม่มีผลต่อระบบนิเวศ"
+    ],
+    "ans": 0,
+    "explain": "เมื่อกบลดลง ตั๊กแตนถูกกินน้อยลงจึงอาจเพิ่มขึ้น ส่วนงูมีเหยื่อลดลง จึงอาจได้รับผลกระทบ",
+    "tip": "ไล่ความสัมพันธ์ว่าใครกินใคร"
+  },
+  {
+    "cat": "ชีววิทยา",
+    "level": "วิเคราะห์",
+    "q": "ไซเลมและโฟลเอ็มต่างกันอย่างไร",
+    "stem": "แยกหน้าที่ลำเลียงน้ำ/แร่ธาตุกับอาหาร",
+    "choices": [
+      "ไซเลมลำเลียงอาหาร โฟลเอ็มลำเลียงน้ำ",
+      "ไซเลมลำเลียงน้ำและแร่ธาตุ โฟลเอ็มลำเลียงอาหาร",
+      "ทั้งสองสังเคราะห์แสง",
+      "ทั้งสองเป็นอวัยวะของสัตว์"
+    ],
+    "ans": 1,
+    "explain": "ไซเลมลำเลียงน้ำและแร่ธาตุจากราก ส่วนโฟลเอ็มลำเลียงอาหารที่พืชสร้างได้ไปยังส่วนต่าง ๆ",
+    "tip": "ไซเลม = น้ำ, โฟลเอ็ม = อาหาร"
+  },
+  {
+    "cat": "ชีววิทยา",
+    "level": "ซับซ้อน",
+    "q": "เลือดที่กลับจากร่างกายเข้าสู่หัวใจห้องบนขวา มีลักษณะใด",
+    "stem": "เลือดจากเนื้อเยื่อใช้ออกซิเจนไปแล้วและรับคาร์บอนไดออกไซด์กลับมา",
+    "choices": [
+      "มีออกซิเจนสูงที่สุด",
+      "ไม่มีเม็ดเลือดแดง",
+      "มีคาร์บอนไดออกไซด์ค่อนข้างสูง",
+      "เป็นเลือดจากปอดโดยตรง"
+    ],
+    "ans": 2,
+    "explain": "เลือดจากร่างกายใช้ออกซิเจนแล้วและมีคาร์บอนไดออกไซด์มากขึ้น จึงไหลกลับเข้าสู่หัวใจด้านขวา",
+    "tip": "ร่างกาย → หัวใจขวา = CO₂ สูง"
+  },
+  {
+    "cat": "ชีววิทยา",
+    "level": "ยากมาก",
+    "q": "ใบพืชที่ได้รับแสง เมื่อนำไปทดสอบด้วยไอโอดีนแล้วเปลี่ยนเป็นสีน้ำเงินดำ แปลว่าอะไร",
+    "stem": "ไอโอดีนใช้ทดสอบแป้ง ซึ่งเป็นผลจากการสร้างอาหารของพืช",
+    "choices": [
+      "ใบไม่มีอาหารเลย",
+      "ใบมีโปรตีนสูง",
+      "ใบมีไขมันมาก",
+      "ใบมีแป้ง แสดงว่าเกิดการสังเคราะห์ด้วยแสงมาก่อน"
+    ],
+    "ans": 3,
+    "explain": "ไอโอดีนเปลี่ยนเป็นสีน้ำเงินดำเมื่อพบแป้ง แป้งในใบเป็นหลักฐานว่าพืชสังเคราะห์ด้วยแสงและสร้างอาหารได้",
+    "tip": "ไอโอดีนน้ำเงินดำ = พบแป้ง"
+  },
+  {
+    "cat": "โลกและอวกาศ",
+    "level": "ซับซ้อน",
+    "q": "ถ้าโลกไม่หมุนรอบตัวเอง แต่ยังโคจรรอบดวงอาทิตย์ ผลใดกระทบโดยตรงที่สุด",
+    "stem": "แยกผลของการหมุนรอบตัวเองกับการโคจรรอบดวงอาทิตย์",
+    "choices": [
+      "กลางวันกลางคืนแบบปกติ 24 ชั่วโมงจะไม่เกิด",
+      "ฤดูกาลหายไปทุกกรณี",
+      "แรงโน้มถ่วงหมดไป",
+      "ดวงจันทร์ดับแสง"
+    ],
+    "ans": 0,
+    "explain": "กลางวันกลางคืนรอบประมาณ 24 ชั่วโมงเกิดจากโลกหมุนรอบตัวเอง ถ้าไม่หมุน รูปแบบกลางวันกลางคืนปกติจะไม่เกิด",
+    "tip": "กลางวันกลางคืน = โลกหมุนรอบตัวเอง"
+  },
+  {
+    "cat": "โลกและอวกาศ",
+    "level": "ยากกว่าเดิม",
+    "q": "ฤดูกาลบนโลกเกิดจากสาเหตุหลักใด",
+    "stem": "อย่าสับสนว่าฤดูเกิดจากโลกใกล้หรือไกลดวงอาทิตย์อย่างเดียว",
+    "choices": [
+      "ดวงจันทร์บังโลกทุกเดือน",
+      "แกนโลกเอียงขณะโลกโคจรรอบดวงอาทิตย์",
+      "โลกหยุดหมุนช่วงหนึ่ง",
+      "เมฆบังดวงอาทิตย์ถาวร"
+    ],
+    "ans": 1,
+    "explain": "แกนโลกเอียงเมื่อโลกโคจรรอบดวงอาทิตย์ ทำให้แต่ละซีกโลกได้รับแสงและความร้อนไม่เท่ากัน จึงเกิดฤดูกาล",
+    "tip": "ฤดูกาล = แกนโลกเอียง + โคจร"
+  },
+  {
+    "cat": "โลกและอวกาศ",
+    "level": "วิเคราะห์",
+    "q": "หินตะกอนมักเกิดจากกระบวนการใด",
+    "stem": "คิดถึงการผุพัง พัดพา ทับถม อัดแน่น และเชื่อมประสาน",
+    "choices": [
+      "แมกมาเย็นตัว",
+      "หินถูกความดันสูงจนแปรสภาพ",
+      "ตะกอนทับถม อัดแน่น และเชื่อมประสาน",
+      "น้ำทะเลเดือดทั้งหมด"
+    ],
+    "ans": 2,
+    "explain": "หินตะกอนเกิดจากเศษตะกอนถูกพัดพาไปทับถม อัดแน่น และมีสารเชื่อมประสานจนกลายเป็นหิน",
+    "tip": "ตะกอนทับถม → หินตะกอน"
+  },
+  {
+    "cat": "โลกและอวกาศ",
+    "level": "ยากมาก",
+    "q": "จันทรุปราคาเกิดเมื่อเรียงตำแหน่งอย่างไร",
+    "stem": "โลกต้องอยู่ระหว่างดวงอาทิตย์กับดวงจันทร์ เงาโลกตกบนดวงจันทร์",
+    "choices": [
+      "ดวงอาทิตย์ - ดวงจันทร์ - โลก",
+      "โลก - ดวงจันทร์ - ดวงอาทิตย์",
+      "ดวงจันทร์ - ดวงอาทิตย์ - โลก",
+      "ดวงอาทิตย์ - โลก - ดวงจันทร์"
+    ],
+    "ans": 3,
+    "explain": "จันทรุปราคาเกิดเมื่อโลกอยู่ระหว่างดวงอาทิตย์กับดวงจันทร์ เงาของโลกจึงบังดวงจันทร์",
+    "tip": "จันทรุปราคา = โลกบังดวงจันทร์"
+  },
+  {
+    "cat": "โลกและอวกาศ",
+    "level": "วิเคราะห์ซับซ้อน",
+    "q": "น้ำค้างบนใบหญ้าตอนเช้าเกิดจากกระบวนการใด",
+    "stem": "ไอน้ำในอากาศสัมผัสพื้นผิวที่เย็นกว่าแล้วเปลี่ยนเป็นหยดน้ำ",
+    "choices": [
+      "การควบแน่น",
+      "การระเหย",
+      "การหลอมเหลว",
+      "การระเหิด"
+    ],
+    "ans": 0,
+    "explain": "น้ำค้างเกิดเมื่อไอน้ำในอากาศเย็นตัวและควบแน่นเป็นหยดน้ำบนพื้นผิวที่เย็น",
+    "tip": "ไอน้ำ → หยดน้ำ = ควบแน่น"
+  },
+  {
+    "cat": "โลกและอวกาศ",
+    "level": "ยากมาก",
+    "q": "ป่าต้นน้ำถูกตัดมาก ผลที่อาจเกิดขึ้นคือข้อใด",
+    "stem": "พืชช่วยยึดดิน ชะลอน้ำ และเพิ่มการซึมของน้ำ",
+    "choices": [
+      "น้ำท่วมลดลงเสมอ",
+      "น้ำไหลบ่าและดินพังทลายเพิ่มขึ้น",
+      "ฝนหยุดตกทันทีถาวร",
+      "ดินมีอินทรียวัตถุเพิ่มทันที"
+    ],
+    "ans": 1,
+    "explain": "เมื่อป่าลดลง รากพืชช่วยยึดดินน้อยลง น้ำไหลบ่าได้มากขึ้น เสี่ยงน้ำท่วมและดินพังทลาย",
+    "tip": "ป่า = ยึดดิน + ชะลอน้ำ"
+  },
+  {
+    "cat": "โลกและอวกาศ",
+    "level": "วิเคราะห์",
+    "q": "ชั้นโอโซนสำคัญต่อสิ่งมีชีวิตอย่างไร",
+    "stem": "เกี่ยวข้องกับรังสีอัลตราไวโอเลตจากดวงอาทิตย์",
+    "choices": [
+      "เพิ่มแรงโน้มถ่วง",
+      "ทำให้เกิดน้ำขึ้นน้ำลง",
+      "ช่วยดูดกลืนรังสีอัลตราไวโอเลตบางส่วน",
+      "สร้างดินทั้งหมดบนโลก"
+    ],
+    "ans": 2,
+    "explain": "ชั้นโอโซนช่วยดูดกลืนรังสีอัลตราไวโอเลตบางส่วน ลดอันตรายต่อสิ่งมีชีวิตบนโลก",
+    "tip": "โอโซน = กัน UV บางส่วน"
+  },
+  {
+    "cat": "โลกและอวกาศ",
+    "level": "ซับซ้อน",
+    "q": "เหตุใดดินร่วนจึงเหมาะปลูกพืชทั่วไปมากกว่าดินทรายจัดหรือดินเหนียวจัด",
+    "stem": "ดินดีต้องอุ้มน้ำ ระบายน้ำ และมีอากาศพอเหมาะ",
+    "choices": [
+      "เพราะดินร่วนไม่มีสิ่งมีชีวิต",
+      "เพราะดินร่วนไม่ต้องการน้ำ",
+      "เพราะดินร่วนเป็นหินอัคนี",
+      "เพราะอุ้มน้ำและระบายน้ำได้พอเหมาะ มีอากาศให้ราก"
+    ],
+    "ans": 3,
+    "explain": "ดินร่วนมีสัดส่วนอนุภาคเหมาะสม อุ้มน้ำได้แต่ไม่ขังมาก ระบายน้ำและอากาศได้ดี จึงเหมาะกับรากพืช",
+    "tip": "ดินดี = น้ำพอดี + อากาศ + ธาตุอาหาร"
+  },
+  {
+    "cat": "ทักษะกระบวนการ",
+    "level": "ยากมาก",
+    "q": "ทดลองชนิดดินมีผลต่อการอุ้มน้ำหรือไม่ ตัวแปรตามคือข้อใด",
+    "stem": "ตัวแปรตามคือผลที่วัดหลังเปลี่ยนตัวแปรต้น",
+    "choices": [
+      "ปริมาณน้ำที่ดินอุ้มหรือปริมาณน้ำที่ไหลออก",
+      "ชนิดของดิน",
+      "ปริมาณดินที่ควบคุมให้เท่ากัน",
+      "ภาชนะที่ใช้เหมือนกัน"
+    ],
+    "ans": 0,
+    "explain": "ชนิดดินเป็นตัวแปรต้น ส่วนผลที่วัดคือปริมาณน้ำที่ดินอุ้มหรือไหลออก จึงเป็นตัวแปรตาม",
+    "tip": "ผลที่วัด = ตัวแปรตาม"
+  },
+  {
+    "cat": "ทักษะกระบวนการ",
+    "level": "วิเคราะห์ซับซ้อน",
+    "q": "เปรียบเทียบปุ๋ย 3 ชนิดกับการเจริญของถั่ว ควรควบคุมอะไรให้เหมือนกัน",
+    "stem": "ต้องทำให้ต่างกันเฉพาะชนิดปุ๋ย",
+    "choices": [
+      "สีของกระดาษรายงาน",
+      "ปริมาณน้ำ แสง ชนิดเมล็ด และปริมาณดิน",
+      "ชื่อผู้ทดลอง",
+      "ผลความสูงของต้นถั่ว"
+    ],
+    "ans": 1,
+    "explain": "ควรควบคุมปัจจัยอื่น เช่น น้ำ แสง ชนิดเมล็ด ปริมาณดิน ให้เหมือนกัน เพื่อให้ผลต่างเกิดจากชนิดปุ๋ยจริง",
+    "tip": "ควบคุมตัวแปรอื่นเพื่อให้การทดลองแฟร์"
+  },
+  {
+    "cat": "ทักษะกระบวนการ",
+    "level": "ยากมาก",
+    "q": "ข้อสรุปใดใช้หลักฐานดีที่สุด",
+    "stem": "ข้อสรุปวิทยาศาสตร์ควรอ้างอิงข้อมูล ไม่ใช่ความรู้สึก",
+    "choices": [
+      "ต้นไม้สวยจึงโตดี",
+      "เพื่อนบอกว่าปุ๋ยนี้ดี",
+      "กลุ่มรับแสง 8 ชม. สูงเฉลี่ย 18 ซม. มากกว่ากลุ่มรับแสง 2 ชม. จึงสรุปว่าแสงอาจช่วยการเจริญ",
+      "ฉันชอบแสงมากกว่าความมืด"
+    ],
+    "ans": 2,
+    "explain": "มีข้อมูลเชิงปริมาณจากการทดลองรองรับ คือค่าเฉลี่ยความสูงของพืช จึงเป็นข้อสรุปที่น่าเชื่อถือกว่า",
+    "tip": "ข้อสรุปต้องมีหลักฐาน"
+  },
+  {
+    "cat": "ทักษะกระบวนการ",
+    "level": "วิเคราะห์",
+    "q": "ถ้าอ่านปริมาตรของเหลวในกระบอกตวงจากมุมสูงเกินไป จะเกิดปัญหาใด",
+    "stem": "มุมมองผิดทำให้ค่าคลาดเคลื่อน",
+    "choices": [
+      "ของเหลวกลายเป็นแก๊ส",
+      "กระบอกตวงเปลี่ยนหน่วยเอง",
+      "น้ำหนักของเหลวหายไป",
+      "เกิดความคลาดเคลื่อนจากการอ่านค่า ควรอ่านระดับสายตาที่ก้นเมนิสคัส"
+    ],
+    "ans": 3,
+    "explain": "การอ่านจากมุมสูงหรือต่ำเกินไปทำให้เกิด parallax error ควรอ่านที่ระดับสายตาและดูที่ก้นเมนิสคัส",
+    "tip": "อ่านกระบอกตวง = ระดับสายตา"
+  },
+  {
+    "cat": "บูรณาการ",
+    "level": "ยากมาก",
+    "q": "โรงงานปล่อยเขม่าควันมากจนใบพืชมีคราบหนา ผลใดอาจเกิดกับพืชโดยตรง",
+    "stem": "คราบบนใบอาจบังแสงและรบกวนปากใบ",
+    "choices": [
+      "สังเคราะห์ด้วยแสงลดลงและแลกเปลี่ยนแก๊สแย่ลง",
+      "พืชสร้างอาหารมากขึ้นเพราะใบเข้ม",
+      "รากหยุดดูดน้ำทันทีทุกต้น",
+      "พืชกลายเป็นผู้บริโภค"
+    ],
+    "ans": 0,
+    "explain": "เขม่าบนใบอาจบังแสงและอุดกั้นปากใบบางส่วน ทำให้รับแสงและแลกเปลี่ยนแก๊สลดลง ส่งผลต่อการสังเคราะห์ด้วยแสง",
+    "tip": "มลพิษบนใบ → แสง/ปากใบได้รับผล"
+  },
+  {
+    "cat": "บูรณาการ",
+    "level": "ยากมาก",
+    "q": "ปุ๋ยไหลลงบ่อ ทำให้สาหร่ายเพิ่มมาก แล้วปลาตายจำนวนมาก เหตุผลที่เป็นไปได้ที่สุดคือข้อใด",
+    "stem": "เชื่อมสารอาหารเกิน สาหร่ายบูม การย่อยสลาย และออกซิเจนละลายน้ำ",
+    "choices": [
+      "สาหร่ายทำให้น้ำหนักบ่อเพิ่มเท่านั้น",
+      "สาหร่ายตายและถูกย่อยสลาย ทำให้ออกซิเจนละลายน้ำลด ปลาขาดออกซิเจน",
+      "ปุ๋ยทำให้น้ำแข็งทันที",
+      "ปลาตายเพราะแสงหายไปถาวร"
+    ],
+    "ans": 1,
+    "explain": "สารอาหารจากปุ๋ยทำให้สาหร่ายเพิ่ม เมื่อสาหร่ายตาย การย่อยสลายใช้ออกซิเจนในน้ำ ทำให้ปลาอาจขาดออกซิเจน",
+    "tip": "ปุ๋ยมาก → สาหร่ายบูม → O₂ ลด"
+  },
+  {
+    "cat": "บูรณาการ",
+    "level": "วิเคราะห์ซับซ้อน",
+    "q": "บ้านเปิดแอร์แต่มีช่องว่างประตูมาก ห้องเย็นช้าเพราะเหตุใด",
+    "stem": "คิดเรื่องการไหลเวียนของอากาศและการถ่ายโอนความร้อน",
+    "choices": [
+      "แอร์เปลี่ยนเป็นเครื่องทำความร้อน",
+      "ไม่มีโมเลกุลอากาศในห้อง",
+      "อากาศร้อนภายนอกไหลเข้าและอากาศเย็นไหลออก ทำให้ต้องดึงความร้อนออกต่อเนื่อง",
+      "ความเย็นมีน้ำหนักมากจึงตกลงพื้นเท่านั้น"
+    ],
+    "ans": 2,
+    "explain": "ช่องว่างทำให้อากาศภายนอกร้อนกว่าไหลเข้า และอากาศเย็นไหลออก แอร์จึงต้องทำงานมากขึ้นเพื่อถ่ายเทความร้อนออก",
+    "tip": "ห้องไม่ปิดสนิท = คุมอุณหภูมิยาก"
+  },
+  {
+    "cat": "บูรณาการ",
+    "level": "ยากมาก",
+    "q": "เด็กสรุปว่า “น้ำชนิด X ทำให้ถั่วโตดีที่สุด” จากต้นถั่วเพียง 1 ต้น ข้อบกพร่องสำคัญคืออะไร",
+    "stem": "การทดลองควรทำซ้ำและใช้ค่าเฉลี่ยเพื่อลดความบังเอิญ",
+    "choices": [
+      "ควรดูสีใบอย่างเดียว",
+      "คำว่าโตดีที่สุดใช้ได้เสมอ",
+      "ไม่จำเป็นต้องวัดความสูง",
+      "ข้อมูลน้อยเกินไป ควรทดลองซ้ำหลายต้นและใช้ค่าเฉลี่ย"
+    ],
+    "ans": 3,
+    "explain": "การใช้ข้อมูลจากต้นเดียวไม่น่าเชื่อถือ เพราะอาจเกิดจากความบังเอิญหรือตัวแปรอื่น ควรทดลองซ้ำและใช้ค่าเฉลี่ย",
+    "tip": "ข้อมูลน้อยเกินไป = สรุปไม่แข็งแรง"
+  }
+];
+let order=[],idx=0,score=0,answers=[],name='นักเรียนคนเก่ง',locked=false,audioCtx=null;const cats=[...new Set(QUESTIONS.map(q=>q.cat))];
+function initAudio(){if(!audioCtx)audioCtx=new (window.AudioContext||window.webkitAudioContext)(); if(audioCtx.state==='suspended')audioCtx.resume()}function tone(f=520,d=.08,t='sine',v=.06,delay=0){initAudio();const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.type=t;o.frequency.setValueAtTime(f,audioCtx.currentTime+delay);g.gain.setValueAtTime(0,audioCtx.currentTime+delay);g.gain.linearRampToValueAtTime(v,audioCtx.currentTime+delay+.01);g.gain.exponentialRampToValueAtTime(.001,audioCtx.currentTime+delay+d);o.connect(g);g.connect(audioCtx.destination);o.start(audioCtx.currentTime+delay);o.stop(audioCtx.currentTime+delay+d+.03)}function sfxGood(){[620,850,1180].forEach((f,i)=>tone(f,.09,'triangle',.06,i*.08))}function sfxBad(){tone(150,.16,'sawtooth',.05);tone(95,.2,'square',.035,.09)}function sfxClick(){tone(700,.05,'triangle',.04)}function sfxWin(){[520,660,780,1040,1320].forEach((f,i)=>tone(f,.12,'triangle',.06,i*.07))}
+function go(id){sfxClick();document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}function showFeedback(msg,good){const f=document.getElementById('feedback');f.className='feedback '+(good?'good':'bad');f.innerHTML=msg;void f.offsetWidth;f.classList.add('show')}function burst(n){const c=document.getElementById('confetti');for(let i=0;i<n;i++){const p=document.createElement('div');p.className='piece';p.style.left=Math.random()*100+'vw';p.style.background=['#ffd85a','#55e7ff','#ff74bd','#55f2a6','#fff'][Math.floor(Math.random()*5)];p.style.animationDelay=Math.random()*.35+'s';c.appendChild(p);setTimeout(()=>p.remove(),2300)}}
+function showHow(){alert('กติกา: เลือกคำตอบแล้วล็อกทันที แก้ไม่ได้ ระบบจะแสดงเฉลยอธิบายทุกข้อ และแผงหมายเลขข้อจะติ๊กถูก/กากบาทให้เห็นตลอดเกม\nหน้าสรุปสามารถกด พิมพ์ / บันทึกเป็น PDF ได้')}
+function startGame(){name=document.getElementById('playerName').value.trim()||'นักเรียนคนเก่ง';order=[...Array(QUESTIONS.length).keys()];idx=0;score=0;answers=[];locked=false;go('game');renderMap();renderCategoryBox();renderQuestion();renderHistory()}function currentQ(){return QUESTIONS[order[idx]]}
+function updateStats(){document.getElementById('gName').textContent='👧 '+name;document.getElementById('gProgress').textContent=`ข้อ ${Math.min(idx+1,QUESTIONS.length)}/${QUESTIONS.length}`;document.getElementById('gScore').textContent='⭐ '+score;const pct=answers.length?Math.round(score/answers.length*100):0;document.getElementById('gPercent').textContent=pct+'%'}
+function renderMap(){const map=document.getElementById('qMap');map.innerHTML='';for(let i=0;i<QUESTIONS.length;i++){const d=document.createElement('div');d.className='qnum '+(i===idx?'current ':'')+(answers[i]?(answers[i].ok?'ok':'bad'):'');d.textContent=i+1;map.appendChild(d)}}
+function catStats(){const obj={};cats.forEach(c=>obj[c]={total:QUESTIONS.filter(q=>q.cat===c).length,done:0,correct:0});answers.forEach(a=>{if(a){obj[a.cat].done++;if(a.ok)obj[a.cat].correct++}});return obj}function iconCat(c){return {'ฟิสิกส์':'⚙️','เคมี':'⚗️','ชีววิทยา':'🌱','โลกและอวกาศ':'🌍','ทักษะกระบวนการ':'📊','บูรณาการ':'🧠'}[c]||'🔬'}
+function renderCategoryBox(){const box=document.getElementById('categoryBox');const st=catStats();box.innerHTML='';cats.forEach(c=>{const s=st[c];const pct=s.total?Math.round((s.correct/s.total)*100):0;const row=document.createElement('div');row.className='catRow';row.innerHTML=`<div>${iconCat(c)} ${c}</div><div>${s.correct}/${s.total}</div><div class="bar"><span style="width:${pct}%"></span></div>`;box.appendChild(row)})}
+function renderQuestion(){if(idx>=QUESTIONS.length)return finishGame();locked=false;const q=currentQ();document.getElementById('qNo').textContent=`ข้อ ${idx+1}`;document.getElementById('qCat').textContent=iconCat(q.cat)+' '+q.cat;document.getElementById('qLevel').textContent='🔥 '+q.level;document.getElementById('questionText').textContent=q.q;document.getElementById('stemText').textContent=q.stem;const statusBox=document.getElementById('statusBox'); if(statusBox) statusBox.innerHTML='อ่านโจทย์ให้ครบก่อนตอบนะ ข้อนี้ยากแบบสอบเข้า 🎯<br><b>ตอบแล้วแก้ไม่ได้</b>';const grid=document.getElementById('choiceGrid');grid.innerHTML='';q.choices.forEach((ch,i)=>{const b=document.createElement('button');b.className='choice';b.innerHTML=`<span class="badge" aria-hidden="true">${String.fromCharCode(65+i)}</span><span><b style="margin-right:8px;color:#0f4a75">${String.fromCharCode(65+i)}.</b>${ch}</span>`;b.onclick=()=>answer(i,b);grid.appendChild(b)});updateStats();renderMap();renderCategoryBox()}
+function answer(choice,btn){if(locked)return;locked=true;const q=currentQ();const ok=choice===q.ans;document.querySelectorAll('.choice').forEach((b,i)=>{b.disabled=true;if(i===q.ans)b.classList.add('correct')});if(!ok)btn.classList.add('wrong');if(ok){score++;sfxGood();showFeedback('✅ วิเคราะห์ถูก!',true);burst(18)}else{sfxBad();showFeedback('❌ ยังพลาดจุดสำคัญ',false)}answers[idx]={no:idx+1,cat:q.cat,level:q.level,q:q.q,stem:q.stem,chosen:choice,chosenText:q.choices[choice],ans:q.ans,ansText:q.choices[q.ans],ok,explain:q.explain,tip:q.tip};const statusBox=document.getElementById('statusBox'); if(statusBox) statusBox.innerHTML=ok?'✅ ข้อนี้ผ่านแล้ว! เปิดเฉลยเพื่อดูเหตุผล':'❌ ข้อนี้ยังไม่ผ่าน เปิดเฉลยเพื่อจับจุดหลอก';updateStats();renderMap();renderCategoryBox();renderHistory();showExplain(ok)}
+function showExplain(ok){const a=answers[idx];document.getElementById('modalTitle').innerHTML=ok?'🏆 พิชิตข้อสอบสำเร็จ!':'📘 เปิดเฉลยวิเคราะห์';document.getElementById('modalBody').innerHTML=`<div class="explainGrid"><div class="explainLine ${ok?'good':'bad'}"><b>ผลการตอบ</b><br>${ok?'✅ ถูกต้อง +1 คะแนน':'❌ ผิด ข้อนี้แก้คำตอบไม่ได้'}</div><div class="explainLine"><b>หมวด / ระดับ</b><br>${iconCat(a.cat)} ${a.cat} · ${a.level}</div><div class="explainLine warn full"><b>โจทย์</b><br>${a.no}. ${a.q}<br><span style="color:#475569">${a.stem}</span></div><div class="explainLine ${ok?'good':'bad'}"><b>คำตอบของนักเรียน</b><br>${String.fromCharCode(65+a.chosen)}. ${a.chosenText}</div><div class="explainLine good"><b>คำตอบที่ถูก</b><br>${String.fromCharCode(65+a.ans)}. ${a.ansText}</div><div class="explainLine full"><b>อธิบายแบบวิเคราะห์</b><br>${a.explain}</div><div class="explainLine full warn"><b>จุดจำ / จุดหลอก</b><br>${a.tip}</div></div>`;document.getElementById('explainModal').classList.add('show')}
+function nextQuestion(){document.getElementById('explainModal').classList.remove('show');idx++;renderQuestion()}function renderHistory(){const box=document.getElementById('historyBox'); if(!box) return; box.innerHTML='';answers.slice().reverse().forEach(a=>{const d=document.createElement('div');d.className='hist '+(a.ok?'ok':'bad');d.innerHTML=`<b>${a.ok?'✅':'❌'} ข้อ ${a.no} · ${a.cat}</b><br>ตอบ: ${String.fromCharCode(65+a.chosen)} | ถูก: ${String.fromCharCode(65+a.ans)}`;box.appendChild(d)})}
+function finishGame(){go('final');const pct=Math.round(score/QUESTIONS.length*100);document.getElementById('finalScore').textContent=pct+'%';const pass=pct>=80;document.getElementById('finalSummary').innerHTML=`${name} ทำข้อสอบวิทย์สอบเข้า ม.1 ชุดที่ 2 ครบ 40 ข้อแล้ว 🔬<br>คะแนน: <b>${score}/40</b> | ผล: <b>${pass?'ผ่านเกณฑ์ 80% ✅':'ควรทบทวนเพิ่ม 📚'}</b>`;renderFinalCategory();renderAdvice(pct);renderFinalReview();if(pass){sfxWin();burst(120)}}
+function renderFinalCategory(){const box=document.getElementById('finalCategory');const st=catStats();box.innerHTML='';cats.forEach(c=>{const s=st[c];const pct=Math.round((s.correct/s.total)*100);const d=document.createElement('div');d.className='catRow';d.innerHTML=`<div>${iconCat(c)} <b>${c}</b></div><div>${s.correct}/${s.total} (${pct}%)</div><div class="bar"><span style="width:${pct}%"></span></div>`;box.appendChild(d)})}
+function renderAdvice(pct){const st=catStats();const weak=cats.map(c=>{const s=st[c];return {c,p:Math.round(s.correct/s.total*100),s}}).sort((a,b)=>a.p-b.p).slice(0,2);let level=pct>=90?'ระดับยอดเยี่ยม เหมาะฝึกโจทย์ประยุกต์ยาวขึ้น':pct>=80?'ผ่านเกณฑ์ดีแล้ว ควรเก็บจุดพลาดเพื่อเพิ่มความแม่น':pct>=60?'พื้นฐานพอใช้ แต่ยังต้องฝึกอ่านโจทย์วิเคราะห์และจับคำหลอก':'ควรทบทวนเนื้อหาหลักก่อน แล้วค่อยเล่นซ้ำ';document.getElementById('teacherAdvice').innerHTML=`<p><b>ภาพรวม:</b> ${level}</p><p><b>หมวดที่ควรเน้น:</b> ${weak.map(x=>iconCat(x.c)+' '+x.c+' '+x.p+'%').join(' และ ')}</p><p><b>วิธีใช้สอน:</b> ให้เด็กอ่านเฉลยข้อที่ผิด แล้วอธิบายกลับว่า “โจทย์หลอกตรงไหน” จะช่วยฝึกคิดแบบสอบเข้าได้ดีมาก</p><p><b>การบ้านเสริม:</b> ให้ทำข้อผิดซ้ำโดยไม่ดูเฉลย และจดสูตร/หลักจำจากช่อง “จุดจำ / จุดหลอก”</p>`}
+function renderFinalReview(){const box=document.getElementById('finalReview');box.innerHTML='';answers.forEach(a=>{const d=document.createElement('div');d.className='reviewItem '+(a.ok?'ok':'bad');d.innerHTML=`<b>${a.ok?'✅':'❌'} ข้อ ${a.no} · ${iconCat(a.cat)} ${a.cat} · ${a.level}</b><br><b>โจทย์:</b> ${a.q}<br><b>ตอบ:</b> ${String.fromCharCode(65+a.chosen)}. ${a.chosenText}<br><b>ถูก:</b> ${String.fromCharCode(65+a.ans)}. ${a.ansText}<br><b>เหตุผล:</b> ${a.explain}<br><span class="tag">จุดจำ: ${a.tip}</span>`;box.appendChild(d)})}
+</script>
+</body>
+</html>
